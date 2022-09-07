@@ -14,8 +14,18 @@ class CurriculoSerializer(serializers.ModelSerializer):
 class FormularioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Formulario
-        fields = ['id', 'candidato', 'curriculo', 'data']
+        ##fields = ['id', 'candidato', 'curriculo', 'data']
+        exclude = []
         
+class ListaFormularioCandidatoSerializer(serializers.ModelSerializer):
+    
+    candidato = serializers.ReadOnlyField(source='candidato.nome')
+    curriculo = serializers.ReadOnlyField(source='curriculo.experiencia')
+    
+    class Meta:
+        model = Formulario
+        fields = ['candidato', 'curriculo']
+
         
 
         
