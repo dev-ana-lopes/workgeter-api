@@ -1,26 +1,10 @@
 from django.contrib import admin
-from usuario.models import Candidato, Curriculo, Formulario
+from usuario.models import Candidato
 
 class Candidatos(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'idade', 'email')
-    list_display_links = ('id', 'nome')
-    search_fields = ('nome', )
-    list_per_page = 20
-
-class Curriculos(admin.ModelAdmin):
-    list_display = ('id', 'experiencia', 'formacao')
-    list_display_links = ('id', 'experiencia')
-    search_fields = ('id', )
-    list_per_page = 20
-    
-class Formularios(admin.ModelAdmin):
-    list_display = ('id', 'candidato', 'curriculo', 'data')
-    list_display_links = ('id', 'candidato')
-    search_fields = ('id', )
-    list_per_page = 20
-
-    
+    list_display = ('id', 'nome_completo', 'cpf', 'celular', 'email', 'password')
+    list_display_links = ('id', 'nome_completo', 'cpf')
+    search_fields = ('nome_completo', )
+    list_per_page = 10
+  
 admin.site.register(Candidato, Candidatos)
-admin.site.register(Curriculo, Curriculos)
-admin.site.register(Formulario, Formularios)
-    
