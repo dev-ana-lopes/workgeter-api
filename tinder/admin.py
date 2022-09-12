@@ -1,5 +1,5 @@
 from django.contrib import admin
-from usuario.models import Candidato
+from tinder.models import Candidato
 
 class Candidatos(admin.ModelAdmin):
     list_display = ('id', 'nome_completo', 'cpf', 'celular', 'email', 'password')

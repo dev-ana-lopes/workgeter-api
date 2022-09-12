@@ -1,8 +1,8 @@
-from rest_framework import viewsets, generics
-from usuario.models import Candidato
-from usuario.serializer import CandidatoSerializer
-from rest_framework.authentication import BasicAuthentication
-from rest_framework.permissions import IsAuthenticated
+from rest_framework import viewsets #generics
+from tinder.models import Candidato
+from tinder.serializer import CandidatoSerializer
+#from rest_framework.authentication import BasicAuthentication
+#from rest_framework.permissions import IsAuthenticated
 
 class CandidatosViewSet(viewsets.ModelViewSet):
     """Exibindo todos os candidatos"""

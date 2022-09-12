@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from usuario.models import Candidato
+from tinder.models import Candidato
 
 class CandidatoSerializer(serializers.ModelSerializer):
     class Meta:
