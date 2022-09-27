@@ -1,6 +1,6 @@
 from rest_framework import viewsets #generics
-from tinder.models import Candidato, Empresa
-from tinder.serializer import CandidatoSerializer, EmpresaSerializer
+from tinder.models import Candidato, Empresa, Formulario
+from tinder.serializer import CandidatoSerializer, EmpresaSerializer, FormularioSerializer
 
 #from rest_framework.authentication import BasicAuthentication
 #from rest_framework.permissions import IsAuthenticated
@@ -16,3 +16,8 @@ class EmpresaViewSet(viewsets.ModelViewSet):
     """Exibindo todas empresas"""
     queryset = Empresa.objects.all()
     serializer_class = EmpresaSerializer
+
+class FormularioViewSet(viewsets.ModelViewSet):
+    """Exibindo todos formulários"""
+    queryset = Formulario.objects.all()
+    serializer_class = FormularioSerializer

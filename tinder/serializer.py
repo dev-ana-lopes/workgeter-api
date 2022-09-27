@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from tinder.models import Candidato, Empresa
+from tinder.models import Candidato, Empresa, Formulario
 
 class CandidatoSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,4 +11,10 @@ class CandidatoSerializer(serializers.ModelSerializer):
 class EmpresaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Empresa
+        fields = '__all__'
+
+
+class FormularioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Formulario
         fields = '__all__'
